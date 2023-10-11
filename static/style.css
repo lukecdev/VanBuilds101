@@ -1,0 +1,23 @@
+body {
+    background-color: bisque;
+}
+
+.brand {
+    font-family:'Times New Roman';
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: aqua;
+}
+
+.red-o {
+    color: blueviolet;
+}
+
+.thin {
+    font-weight: 200;
+}
+
+.light-bg {
+    background-color: azure;
+}
+
