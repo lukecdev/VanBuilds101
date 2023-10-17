@@ -62,17 +62,17 @@
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ }}
+                        {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
-                            {{ }}
+                            {{ comment.created_on }}
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
-                    {{  | linebreaks }}
+                    {{ comment.body | linebreaks }}
                 </div>
                 <!-- Our for loop ends here -->
-                {% %}
+                {% endfor %}
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
@@ -91,6 +91,9 @@
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
