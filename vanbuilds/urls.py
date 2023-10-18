@@ -23,7 +23,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls'), name='blogs_urls'),
     path('accounts/', include('allauth.urls')),
-    path('', include('gallery.urls'), name='gallery_urls'),
+    path('gallery/', include('gallery.urls'), name='gallery_urls'),
 ]
 
 if settings.DEBUG:
