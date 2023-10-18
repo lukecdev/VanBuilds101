@@ -25,10 +25,9 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">a</span>d<span
-                        class="thin">|van</span></span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">Van Builds 101</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,6 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    <!--
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -49,12 +49,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
+                   
                     {% endif %}
-
+                    -->
                 </ul>
-                <span class="navbar-text text-muted">
-                    van building
-                </span>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                   
+                    {% endif %}
+                  </ul>
             </div>
         </div>
     </nav>
