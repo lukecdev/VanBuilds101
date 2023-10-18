@@ -26,5 +26,6 @@ urlpatterns = [
     path('gallery/', include('gallery.urls'), name='gallery_urls'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=setting.MEDIA_ROOT)
+#
+#if settings.DEBUG:
+#    urlpatterns += static(settings.MEDIA_URL, document_root=setting.MEDIA_ROOT)
