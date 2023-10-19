@@ -30,7 +30,9 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text "></p>
+                <p class="card-text ">
+                    {{ post.content | safe }}
+                </p>
                 <div class="row">
 
                     <div class="col-1">
