@@ -20,4 +20,4 @@ def submit_image(request):
     else:
         form = ImageSubmissionForm()        
 
-    return render(request, "van_images.html" , {'form': form})   
+    return render(request, "van_images.html", {'images': images})

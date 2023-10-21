@@ -12,6 +12,12 @@ class ImageSubmissionAdmin(admin.ModelAdmin):
     actions = ['approve_images']
 
     def approve_images(self, request, queryset):
-        queryset.update(approved=True)
+        for image_submission in queryset:
+            image = Image(image=image_submission.image)
+            image.save()
+            queryset.update(approved=True)
+            image_submission.delete()
+
+        self.message_user(request, f'Selected images have been approved and moved to "admin/gallery/image/".') 
 
 admin.site.register(ImageSubmission, ImageSubmissionAdmin)
