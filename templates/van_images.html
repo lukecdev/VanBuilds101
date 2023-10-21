@@ -9,11 +9,18 @@
     <h1>Gallery</h1>
     <h2>Test Test</h2>
     <ul>
-        <form method="post" enctype="multipart/form-data">
+        {% if user.is_authenticated %}
+        <div class="submit-image">
+        <form method="post" enctype="multipart/form-data" >
             {% csrf_token %}
-            {{ form.as_p }}
-    <button type="submit">Submit Image</button>
+            {{ form.media }}
+            
+    <button class="btn btn-secondary">Submit Image</button>
         </form>
+        </div>
+
+
+
         <div class="col-6 card mb-6  mt-3 ">
             <div class="card-body">
                
@@ -82,5 +89,5 @@
         </div>
         
 </body>
-
+{% endif %}
 {% endblock %}
