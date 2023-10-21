@@ -12,12 +12,20 @@ def van_images(request):
 
 def submit_image(request):
     if request.method == 'POST':
-        form = ImageSubmissionForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        data = request.POST
+        images = request.FILES.get('image')
+
+        print('image:', image)
+    
+    #if request.method == 'POST':
+     #   form = ImageSubmissionForm(request.POST, request.FILES)
+      #  if form.is_valid():
+       #     form.save()
+        #    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
     else:
         form = ImageSubmissionForm()        
 
     return render(request, "van_images.html", {'images': images})
+
+

@@ -4,4 +4,4 @@ from django import forms
 class ImageSubmissionForm(forms.ModelForm):
     class Meta:
         model = ImageSubmission
-        fields = ['image']
+        fields=("caption","image")

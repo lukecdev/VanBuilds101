@@ -14,3 +14,5 @@ class ImageSubmission(models.Model):
     image = models.ImageField(upload_to='media/')
     submitted_at = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+
+    

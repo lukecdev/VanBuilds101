@@ -10,14 +10,21 @@
     <h2>Test Test</h2>
     <ul>
         {% if user.is_authenticated %}
-        <div class="submit-image">
-        <form method="post" enctype="multipart/form-data" >
+        <div class="container">
+        <form action="." method="post" enctype="multipart/form-data" >
             {% csrf_token %}
-            {{ form.media }}
+            {{ form.as_p }}
+            <!--<input type="file" class="custom-file-input" id="inputGroupFile03">
+            <label class="custom-file-label" for="inputGroupFile03">Choose file</label> -->
+            <div class="form-group m-3">
+                <label>Upload image</label>
+                <input name="image" type="file" multiple class="form-control-file">
+            </div>
             
-    <button class="btn btn-secondary">Submit Image</button>
+    <button type="submit" class="btn btn-secondary">Submit Image</button>
         </form>
         </div>
+        {% endif %}
 
 
 
@@ -47,7 +54,7 @@
     </ul>
     <ul>
         {% for image in images %}
-        <li><img src="{{ image.image.url }}" alt="{{ image.title }}"></li>
+        <li><img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-thumbnail"></li>
         {% endfor %}
     </ul>
 
@@ -88,6 +95,7 @@
             </div>
         </div>
         
+        
 </body>
-{% endif %}
+
 {% endblock %}

@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html class="h-100" lang="en">
 
 <!--Temparay home base template-->
 <head>
@@ -25,7 +25,7 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">Van Builds 101</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -40,21 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'van_images' %}">Gallery</a>
                     </li>
-                    <!--
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                   
-                    {% endif %}
-                    -->
+                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
@@ -95,7 +81,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
+    <footer id="footer" class="footer bg-light text-dark">
+        <div class="container p-4 pb-0">
+            <section class="mb-4 d-flex justify-content-center">
+
+            </section>
+        </div>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">About VanBuilds101</h5>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(5, 5, 5, 0.3);">
+            Copyright
+        </div>
     </footer>
 
     <script>
