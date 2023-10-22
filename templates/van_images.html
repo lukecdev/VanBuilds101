@@ -18,7 +18,7 @@
             <label class="custom-file-label" for="inputGroupFile03">Choose file</label> -->
             <div class="form-group m-3">
                 <label>Upload image</label>
-                <input name="image" type="file" multiple class="form-control-file">
+                <input name="image" type="file" multiple cl ass="form-control-file">
             </div>
             
     <button type="submit" class="btn btn-secondary">Submit Image</button>
@@ -26,7 +26,7 @@
         </div>
         {% endif %}
     </ul>
-    
+    <!--
     <ul>
         {% for image in images %}
         <div class="text-center">
@@ -49,7 +49,46 @@
                 {% endfor %}
             
         </div>
+    </div> -->
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-10 left">
+                <div class="row">
+                    {% for image in images %}
+                <div class="col-6 col-sm-4">
+                    <div class="card mb-4" style="width: 25rem;">
+                        <div class="card-body">
+                            <div class="image-container">
+                                
+                                <img src=" {{ post.featured_image.url }}" >
+                                <img class="card-img-top" src="{{ image.image.url }}" alt="{{ image.title }}" width="250px" height="250px" >
+                                
+                                <!--<div class="image-flash">
+                                    <p class="author text-muted">Author: {{ post.author }}</p>
+                                </div> -->
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+        </div>    
+                {% endif %}
+                {% endfor %}
+        <div class="col-2 right sidenav">
+            <h3>VanBlog Catagory</h3>
+            <hr>
+        </div>        
     </div>
+
+</div>
 </body>
 
 {% endblock %}
