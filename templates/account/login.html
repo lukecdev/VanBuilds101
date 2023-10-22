@@ -7,17 +7,21 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
+<div class="card mx-auto" style="width: 35rem;">
+  <div class="row justify-content-center">
     <div class="col-md-8 mt-3 offset-md-2">
+      <br>
+      <div>
+        <img src="https://res.cloudinary.com/dk8mh15az/image/upload/v1697819437/media/Black_and_White_Vintage_Camper_Van_Rental_Logo_1_uutnaw.jpg" width="80" height="80">
+      </div>
+      <br>
       <h2>{% trans "Sign In" %}</h2>
+<!--<p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p> -->
 
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
-</div>
-</div>
-<div class="row">
+    </div>
+  </div>
+<div class="row justify-content-center">
   <div class="col-md-8 mt-3 offset-md-2">
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
@@ -26,7 +30,11 @@
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
 
-  <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+  <button type="submit" class="btn btn-primary btn-block mb-4">{% trans "Sign In" %}</button>
+
+  <div class="text-center">
+    <p>Not a member? <a href="{{ signup_url }}">Register</a></p>
+  </div>
 </form>
 </div>
 </div>

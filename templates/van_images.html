@@ -57,7 +57,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div class="col-10 left">
+        <div class="col-12 left">
                 <div class="row">
                     {% for image in images %}
                 <div class="col-6 col-sm-4">
@@ -65,7 +65,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 
-                                <img src=" {{ post.featured_image.url }}" >
+                                
                                 <img class="card-img-top" src="{{ image.image.url }}" alt="{{ image.title }}" width="250px" height="250px" >
                                 
                                 <!--<div class="image-flash">
@@ -81,11 +81,7 @@
             </div>
         </div>    
                 {% endif %}
-                {% endfor %}
-        <div class="col-2 right sidenav">
-            <h3>VanBlog Catagory</h3>
-            <hr>
-        </div>        
+                {% endfor %}        
     </div>
 
 </div>

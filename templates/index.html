@@ -9,7 +9,7 @@
                 <div class="row">
                 {% for post in post_list %}
                 <div class="col-6 col-sm-4">
-                    <div class="card mb-4" style="width: 20rem;">
+                    <div class="card mb-4 border" style="width: 22rem;">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
@@ -24,7 +24,7 @@
                             </div>
                                 <h3 class="card-title">{{ post.title }}</h3>
                                 <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
+                            
                             <br>
                             <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">See Article</a>
                             <hr />
