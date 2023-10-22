@@ -9,23 +9,24 @@
                 <div class="row">
                 {% for post in post_list %}
                 <div class="col-6 col-sm-4">
-                    <div class="card mb-4" style="width: 25rem;">
+                    <div class="card mb-4" style="width: 20rem;">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                <img class="img-fluid"
+                                    src="https://res.cloudinary.com/dk8mh15az/image/upload/v1698004547/media/ikvamdwgkjtnbpjlith2.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" width="250px" height="250px">
+                                <img class="img-fluid" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author text-muted">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
                                 <h3 class="card-title">{{ post.title }}</h3>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
+                            <br>
+                            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">See Article</a>
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
