@@ -6,8 +6,8 @@
     <title>Gallery</title>
 </head>
 <body>
-    <h1>Gallery</h1>
-    <h2>Test Test</h2>
+    <br>
+    <h1 class="text-center">Gallery</h1>
     <ul>
         {% if user.is_authenticated %}
         <div class="container">
@@ -26,33 +26,6 @@
         </div>
         {% endif %}
     </ul>
-    <!--
-    <ul>
-        {% for image in images %}
-        <div class="text-center">
-            
-                <img src="{{ image.image.url }}" alt="{{ image.title }}" class="rounded img-fluid" >
-        
-        {% endfor %}
-    </ul>
-    <div class="row">
-        <div class="flex-shrink-0 main-bg">
-            
-                {% for image in images %}
-                <div class="card" style="width: 18rem;">
-                <img src="{{ image.image.url }}" alt="{{ image.title }}" class="card-img-top" >
-        
-                 <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                </div>
-                {% endfor %}
-            
-        </div>
-    </div> -->
-
-
-
 
 <div class="container-fluid">
     <div class="row">
@@ -64,16 +37,18 @@
                     <div class="card mb-4" style="width: 25rem;">
                         <div class="card-body">
                             <div class="image-container">
-                                
-                                
+
                                 <img class="card-img-top" src="{{ image.image.url }}" alt="{{ image.title }}" width="250px" height="250px" >
-                                
+
                                 <!--<div class="image-flash">
                                     <p class="author text-muted">Author: {{ post.author }}</p>
                                 </div> -->
                             </div>
-                            
-                            
+                          
+                        </div>
+                        <div class="card-footer">
+                            <h4 class="card-title"> Placeholder</h4>
+                            <p>Exerpt placeholder</p>
                         </div>
                     </div>
                 </div>
