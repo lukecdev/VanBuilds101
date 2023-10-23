@@ -7,7 +7,27 @@
 
 {% block content %}
 
-<div class="card mx-auto" style="width: 35rem;">
+<section class="text-center">
+  <br>
+  <h1>{% trans "Sign In" %}</h1>
+  
+  <br>
+
+  
+  <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button type="submit" class="btn btn-primary btn-block mb-4">{% trans "Sign In" %}</button>
+    <br>
+    <p>Not a member? <a href="{{ signup_url }}">Register</a></p>
+  </form>
+  </section>
+
+
+<!--<div class="card mx-auto" style="width: 35rem;">
   <div class="row justify-content-center">
     <div class="col-md-8 mt-3 offset-md-2">
       <br>
@@ -16,9 +36,8 @@
       </div>
       <br>
       <h2>{% trans "Sign In" %}</h2>
-<!--<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p> -->
-
+<p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p> 
     </div>
   </div>
 <div class="row justify-content-center">
@@ -38,6 +57,6 @@
 </form>
 </div>
 </div>
-</div>  
+</div>  -->
 
 {% endblock content %}
