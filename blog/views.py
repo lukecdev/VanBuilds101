@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm 
 
 class PostList(generic.ListView):
     model = Post
@@ -10,6 +10,20 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 4
 
+class PostCreateView(generic.CreateView):
+    model = Post
+    template_name = "login.html"
+    fields = ['title', 'content', 'featured_image']
+    
+
+    #def form_valid(self, form):
+      #  form.instance.author = self.request.user
+       # return super(PostCreateView, self).form_valid(form)    
+
+        #return render(
+            #request,
+           # "new_post.html",
+        #)
 
 class PostDetail(View):
 
