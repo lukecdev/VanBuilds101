@@ -4,6 +4,28 @@
 
 
 <div class="masthead">
+    <ul>
+        {% if user.is_authenticated %}
+        <div class="container">
+        <form action="." method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{ form.as_p }}
+            <!--<input type="file" class="custom-file-input" id="inputGroupFile03">
+            <label class="custom-file-label" for="inputGroupFile03">Choose file</label> -->
+            <div class="form-group m-3">
+                <label>Upload image</label>
+                <input name="image" type="file" multiple cl ass="form-control-file">
+            </div>
+
+            <div>
+                <a class="nav-link" href="{% url 'update_post' %}">New Post</a>
+            </div>
+            
+    <button type="submit" class="btn btn-secondary">Submit Image</button>
+        </form>
+        </div>
+        {% endif %}
+    </ul>
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 masthead-text">

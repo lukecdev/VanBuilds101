@@ -10,10 +10,11 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 4
 
+
 class PostCreateView(generic.CreateView):
     model = Post
-    template_name = "login.html"
-    fields = ['title', 'content', 'featured_image']
+    template_name = "new_post.html"
+    fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']
     
 
     #def form_valid(self, form):
@@ -24,6 +25,13 @@ class PostCreateView(generic.CreateView):
             #request,
            # "new_post.html",
         #)
+
+class UpdatePostView(generic.UpdateView):
+    model = Post
+    template_name = "update_post.html"
+    fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']
+
+    
 
 class PostDetail(View):
 
