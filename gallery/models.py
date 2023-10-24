@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 class Image(models.Model):
     title = models.CharField(max_length=150)
+    slug = models.SlugField(max_length=200, unique=True, default='image')
     excerpt = models.TextField(blank=True, max_length=500)
     image = models.ImageField(upload_to='media/')
     author = models.ForeignKey(User, on_delete= models.CASCADE, related_name="image_author")

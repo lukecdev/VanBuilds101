@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
-<!--Temparay home base template-->
+<!--home base template-->
 <head>
     <title>Van Builds 101</title>
 
@@ -21,10 +21,9 @@
 
 </head>
 
-<body class="d-flex flex-column h-100 main-bg">
+<body class="d-flex flex-column min-vh-100">
 
-    <!-- Navigation -->
-
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">Van Builds 101</a>
@@ -86,27 +85,24 @@
 
     <main class="flex-shrink-0 main-bg bg-light">
         {% block content %}
-        <!-- Content Goes here -->
+        
         {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="footer bg-light text-dark">
+    <footer id="footer" class="footer mt-auto" style="background-color: rgba(5, 5, 5, 0.3);" >
         <div class="container p-4 pb-0">
-            <section class="mb-4 d-flex justify-content-center">
-
-            </section>
+            
         </div>
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-4">
-                    <h5 class="footer-heading">About VanBuilds101</h5>
+                <div class="col-lg-12 text-center p-3">
+                    <h5>About VanBuilds101:</h5>
+                    <p>This is a fullstack portfolio project created for Project #4 at Code Institute</p>
                 </div>
             </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(5, 5, 5, 0.3);">
-            Copyright
-        </div>
+        
     </footer>
 
     <script>

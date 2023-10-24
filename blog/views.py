@@ -30,8 +30,6 @@ class DeletePostView(generic.DeleteView):
     success_url = reverse_lazy('home')
     fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']    
 
-    
-
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
