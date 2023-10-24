@@ -69,16 +69,69 @@ The goal of the site is to create a platform for online communication. To create
 | author |ForeignKey|
 | approved |BooleanField|
 
+# UX Design
+
+## Agile Methodology
+- The principles of agile methodology were implemented during the project. By assigning user stories to issues and utilizing the GitHub Kanban board, the necessary project goals could be easliy prioritized. Labels were used to fine tune the priority of each user story.
+
+## User Stories
+
+### Users
+- I can **view a list of blog posts** so that I can **select which blog post** to read.
+- I can **click on a post** so that **I can view the full article text**.
+- I can **register an account** so that I can **add posts, comment, and like posts**.
+- I can **leave comments on posts** so that **I can engage in discussion with users**.
+- I want to be **able to submit a blog post to publish**.
+- I can **view the number of likes on a post** to be able **engage with the blog community**.
+
+### Admin
+- I can **read, create, edit, and delete posts** so that **I can manage the blog's content**
+- I can **approve or disapprove comments** so that **I can filter out objectionable comments**
+- I can **delete messages** so that **I can clean out any unwanted comments**
+- I can **create draft posts** so that **I can finish writing the content later**
+
+### NINTH User stories
+- I can **utilize a map API capability** so that **I can use the map to locate useful related locations**
+
 ## Features
 
-## Existing Features
+### Navbar
+Desktop View while user is logged out/unregistered: 
 
-### Site Pages
+### Footer
 
-### User Features
+### Homepage
 
-### Future Features
+### Post Detail View
 
+### Register
+
+### Sign In
+
+### Sign Out
+
+### Leave a Comment
+
+
+## Future Features
+
+# C.R.U.D
+
+# Technologies Used
+1. Python - Used for the logic in this project
+2. Github - For code repository and code version control.
+3. Heroku - To deploy the live application.
+4. Gitpod - Cload based code editor used.
+5. LucidCharts - Used for flow chart creation.
+6. Django - Framework used to build this project. Provides a ready installed admin panel and includes many helper template tags that make writing code quick and efficient.
+7. Bootstrap - Used as the base front end framework to work alongside Django.
+8. Elephant SQL - Was used as the database for this project during development and in production.
+9. Cloudinary - Used to host the static files for this project including user profile images.
+10. Git - Used for version control throughout the project and to ensure a good clean record of work done was maintained.
+
+# Testing
+
+## Manual Testing
 
 ###########
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
