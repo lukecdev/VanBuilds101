@@ -27,7 +27,19 @@
                             
                             <br>
                             <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">See Article</a>
-                            <hr />
+                            
+                            {% if user.is_authenticated %}
+                            <hr>
+                            <div>
+                                <small>
+                                    <a class="link" href="{% url 'update_post' post.slug %}">(Edit Post)</a>
+        
+                                    <a class="link" href="{% url 'delete_post' post.slug %}">(Delete Post) </a>
+                                </small>
+                            </div>
+                            {% endif %}
+                            
+                            <hr>
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
