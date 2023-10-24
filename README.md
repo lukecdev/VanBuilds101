@@ -11,9 +11,63 @@
 
 Van Builds 101 is a blog website that posts articles to provide its users with information about building a campervan. The website also provides addinalal information to campervan owners to build their ideal adventures.
 
+## **[Live Site]
+
+---
+
+## **[Repository]
+
+## Table of contents
+<a name="contents">Back to Top</a>
+ 1. [ UX ](#ux) 
+
 # UX
+<a name="ux"></a>
 
 the design design philosophy fir this site is a easy to navigate and read site. As this site will be hosting articles that provides information, I want to make getting to the particular blog and reading it a minimal effort.
+
+### Site Goal
+The goal of the site is to create a platform for online communication. To create an engaging experience to provide a userful edication for the Vanlife community. 
+
+## Project Planning
+
+### Database 
+
+#### Post Model
+
+| id | Field |
+|--|--|
+| title |CharField|
+| slug |SlugField|
+| author |CharField|
+| excerpt |TextField|
+| created on |DateTimeField|
+| content |textField|
+| featured_image |CloudinaryField|
+| status |IntegerField|
+| likes |ManyToManyField|
+
+#### Comment Model
+
+| id | Field |
+|--|--|
+| post |ForeignKey|
+| name |CharField|
+| email |Emailfield|
+| body |TextField|
+| created on |DateTimeField|
+| approved |BooleanField|
+
+#### Image Model
+
+| id | Field |
+|--|--|
+| title |CharField|
+| slug |SlugField|
+| excerpt |TextField|
+| image |ImageField|
+| author |ForeignKey|
+| approved |BooleanField|
 
 ## Features
 
