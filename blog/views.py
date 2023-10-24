@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm 
+from django.urls import reverse_lazy
 
 class PostList(generic.ListView):
     model = Post
@@ -17,19 +18,17 @@ class PostCreateView(generic.CreateView):
     fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']
     
 
-    #def form_valid(self, form):
-      #  form.instance.author = self.request.user
-       # return super(PostCreateView, self).form_valid(form)    
-
-        #return render(
-            #request,
-           # "new_post.html",
-        #)
 
 class UpdatePostView(generic.UpdateView):
     model = Post
     template_name = "update_post.html"
     fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']
+
+class DeletePostView(generic.DeleteView):
+    model = Post
+    template_name = "delete_post.html"
+    success_url = reverse_lazy('home')
+    fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']    
 
     
 

@@ -20,6 +20,9 @@
             <div>
                 <a class="nav-link" href="{% url 'update_post' post.slug %}">New Post</a>
             </div>
+            <div>
+                <a class="nav-link" href="{% url 'delete_post' post.slug %}">Delete Post</a>
+            </div>
             
     <button type="submit" class="btn btn-secondary">Submit Image</button>
         </form>
