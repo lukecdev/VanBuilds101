@@ -1,30 +1,22 @@
-[![Wireframe](README_docs/wireframes/van-blog-sc-2.png)
 
-[![login example](README_docs/photos/van-blog-sc.png)
-
-
-
-
-###########
+![Website](README_docs/photos/SC-PP4-home.jpg)
 
 # VAN BUILDS 101
 
-Van Builds 101 is a blog website that posts articles to provide its users with information about building a campervan. The website also provides addinalal information to campervan owners to build their ideal adventures.
 
-## **[Live Site]
+## [Live Site](https://vanbuilds-758ccba3a303.herokuapp.com/)
 
----
 
-## **[Repository]
+## [Repository](https://github.com/lukecdev/VanBuilds101)
 
 ## Table of contents
-<a name="contents">Back to Top</a>
+
  1. [ UX ](#ux) 
 
 # UX
 <a name="ux"></a>
 
-the design design philosophy fir this site is a easy to navigate and read site. As this site will be hosting articles that provides information, I want to make getting to the particular blog and reading it a minimal effort.
+The design philosophy for this site is a easy to navigate and read site. As this site will be hosting articles that provides information, I want to make getting to the particular blog and reading it a minimal effort.
 
 ### Site Goal
 The goal of the site is to create a platform for online communication. To create an engaging experience to provide a userful edication for the Vanlife community. 
@@ -70,6 +62,12 @@ The goal of the site is to create a platform for online communication. To create
 | approved |BooleanField|
 
 # UX Design
+
+## WireFrame
+![Wireframe](README_docs/wireframes/van-blog-sc-2.png)
+
+## Design
+The design philosophy for this site is a easy to navigate and read site. As this site will be hosting articles that provides information, I want to make getting to the particular blog and reading it a minimal effort.
 
 ## Agile Methodology
 - The principles of agile methodology were implemented during the project. By assigning user stories to issues and utilizing the GitHub Kanban board, the necessary project goals could be easliy prioritized. Labels were used to fine tune the priority of each user story.
