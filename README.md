@@ -95,25 +95,49 @@ The design philosophy for this site is a easy to navigate and read site. As this
 
 ### Navbar
 Desktop View while user is logged out/unregistered: 
-
-### Footer
+![Navbar](README_docs/photos/SC-PP4-nav.jpg.png)
+- The desktop navigation consists of a a Home blog and Gallery button. 
+- The user is shown the login and register links when not logged in.
+- When user is logged in they are shown just the log out link.
+- If the user is a superuser they will then also have access to creat a new post. 
 
 ### Homepage
-
-### Post Detail View
+![Homepage](README_docs/photos/SC-PP4-home.jpg)
 
 ### Register
+![SignUp](README_docs/photos/sc-signup.jpg)
 
 ### Sign In
+![SignIn](README_docs/photos/sc-signin.jpg)
 
 ### Sign Out
+![SignOut](README_docs/photos/sc-signout.jpg)
 
-### Leave a Comment
+### Leave a Comment/ Like a Post
+![Comment/Like](README_docs/photos/sc-comment-likes.jpg)
 
 
 ## Future Features
 
 # C.R.U.D
+
+## Posting
+
+## Create
+- Create Blog Post View
+![Create](README_docs/photos/sc-create-post.jpg)
+
+## Read
+- Read Post detail
+![Read](README_docs/photos/sc-read-post.jpg)
+
+## Update
+- Update Blog Post
+![Update](README_docs/photos/sc-update-post.jpg)
+
+## Delete
+- Delete Blog Post
+![Delete](README_docs/photos/sc-delete-post.jpg)
 
 # Technologies Used
 1. Python - Used for the logic in this project
