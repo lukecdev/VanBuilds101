@@ -45,6 +45,7 @@
                     {% if user.is_superuser %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'create_post' %}">New Post</a>
+                        <a class="nav-link" href="{% url 'admin' %}">Admin Panel</a>
                     </li>
                     {% else %}
                     
