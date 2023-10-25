@@ -28,9 +28,9 @@
             <div class="d-none d-md-block col-md-12 masthead-image">
                 <!-- The featured image/ Placeholder post images -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/dk8mh15az/image/upload/v1698004547/media/ikvamdwgkjtnbpjlith2.jpg" class="vw-100">
+                <img class="img-fluid" src="https://res.cloudinary.com/dk8mh15az/image/upload/v1698004547/media/ikvamdwgkjtnbpjlith2.jpg">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" class="vw-100">
+                <img class="img-fluid" src=" {{ post.featured_image.url }}">
                 {% endif %}
             </div>
         </div>

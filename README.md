@@ -116,6 +116,9 @@ Desktop View while user is logged out/unregistered:
 ### Leave a Comment/ Like a Post
 ![Comment/Like](README_docs/photos/sc-comment-likes.jpg)
 
+### Gallery
+![Gallery](README_docs/photos/sc-gallery.jpg)
+
 
 ## Future Features
 
