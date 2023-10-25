@@ -129,115 +129,79 @@ Desktop View while user is logged out/unregistered:
 9. Cloudinary - Used to host the static files for this project including user profile images.
 10. Git - Used for version control throughout the project and to ensure a good clean record of work done was maintained.
 
+## Installed Packages
+- django<4' gunicorn
+- dj_database_url psycopg2
+- dj3-cloudinary-storage
+- django-summernote
+- django-allauth
+- django-crispy-forms
+- pillow
+
+# Deployment
+To deploy the project through Heroku I followed these steps:
+
+- Sign up / Log in to  [Heroku](https://www.heroku.com/)
+- From the main Heroku Dashboard page select 'New' and then 'Create New App'
+- Give the project a name - I decided on the devils kitchen and selected EU as that is the closes region to me.
+- After this you select select create app. 
+- The name for the app must be unique or you will not be able to continue.
+- Heroku will create the app and bring you to the deploy tab. 
+- From the submenu at the top, navigate to the resources tab.
+- Add the database to the app, in the add-ons section search for 'Heroku Postgres', select the package that appears and add 'Heroku Postgres' as the database
+- Click on the setting tab
+- Open the config vars section copy the DATABASE_URL to the clipboard for use in the Django configuration.
+- Inside the Django app repository create a new file called env.py
+- within this file import the os library and set the environment variable for the DATABASE_URL pasting in the address copied from Heroku. 
+- The line should appear as os.environ["DATABASE_URL"]= "Paste the link in here"
+-   Add a secret key to the app using os.environ["SECRET_KEY"] = "your secret key goes here"
+-   Add the secret key just created to the Heroku Config Vars as SECRET_KEY for the KEY value and the secret key value you created as the VALUE
+-   In the settings.py file within the django app, import Path from pathlib, import os and import dj_database_url
+-   insert the line if os.path.isfile("env.py"): import env
+-   remove the insecure secret key that django has in the settings file by default and replace it with SECRET_KEY = os.environ.get('SECRET_KEY')
+-   replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))} ensure the correct indentation for python is used.
+-   In the terminal migrate the models over to the new database connection
+---
+-   Navigate in a browser to cloudinary, log in, or create an account and log in.
+-   From the dashboard - copy the CLOUDINARY_URL to the clipboard
+-   In the env.py file - add os.environ["CLOUDINARY_URL"] = "paste in the Url copied to the clipboard here"
+-   In Heroku, add the CLOUDINARY_URL and value copied to the clipboard to the config vars
+-   Also add the KEY - DISABLE_COLLECTSTATIC with the Value - 1 to the config vars
+-   this key value pair must be removed prior to final deployment
+-   Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staitcfiles' and 'cloudinary' goes below it.
+-   in the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+-   Link the file to the templates directory in Heroku TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+-   Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]
+-   Add Heroku to the ALLOWED_HOSTS list the format will be the app name given in Heroku when creating the app followed by .herokuapp.com
+-   In your code editor, create three new top level folders, media, static, templates
+-   Create a new file on the top level directory - Procfile
+-   Within the Procfile add the code - web: guincorn PROJECT_NAME.wsgi
+-   In the terminal, add the changed files, commit and push to GitHub
+-   In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
+-   Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
+
+#### Forking the repository
+y forking the GitHub Repository you can make a copy of the original repository to view or change without it effecting the original repository.
+You can do this by: 
+-  Logging into GitHub or create an account. 
+- Locate the repository at  [here](https://github.com/lukecdev/VanBuilds101)
+-  At the top of the repository, on the right side of the page, select "Fork" from the buttons available. 
+-  A copy of the repository should now be created in your own repository.
+
+#### [](https://github.com/lukecdev/VanBuilds101)Create a clone of this repository
+Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
+- Navigate to [https://github.com/lukecdev/VanBuilds101](https://github.com/lukecdev/VanBuilds101)
+- click on the arrow on the green code button at the top of the list of files
+- select the clone by https option and copy the URL it provides to the clipboard
+- navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
+- type 'git clone' and paste the https link you copied from github
+- press enter and git will clone the repository to your local machine
+
 # Testing
+
 
 ## Manual Testing
 
-###########
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
-
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+# Credits

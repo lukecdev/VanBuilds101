@@ -7,12 +7,13 @@
 </head>
 <body>
     <br>
-    <h1 class="text-center">Gallery</h1>
+    <h1 class="text-center"><u>Gallery</u></h1>
+    <br>
     <ul>
         {% if user.is_authenticated %}
         <div class="container">
             <div>
-                <a class="link" href="{% url 'new_photo' %}">Edit Post</a>
+                <h4>Want to submit a photo of your campervan? Click here: <a class="link" href="{% url 'new_photo' %}">Upload Photo</a> </h4>
             </div>
            
         </div>
@@ -20,22 +21,7 @@
         {% endif %}
     </ul>
 
-    <ul>
-        {% if user.is_authenticated %}
-        <div class="container">
-        <form action="." method="post" enctype="multipart/form-data" >
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-group m-3">
-                <label>Upload image</label>
-                <input name="image" type="file" multiple cl ass="form-control-file">
-            </div>
-            
-    <button type="submit" class="btn btn-secondary">Submit Image</button>
-        </form>
-        </div>
-        {% endif %}
-    </ul>
+    <br>
 
 <div class="container-fluid">
     <div class="row">
@@ -54,8 +40,8 @@
                           
                         </div>
                         <div class="card-footer">
-                            <h4 class="card-title"> Placeholder</h4>
-                            <p>Exerpt placeholder</p>
+                            <h4 class="card-title">{{ image.title }}</h4>
+                            <p>{{ image.excerpt }}</p>
                         </div>
                     </div>
                 </div>
