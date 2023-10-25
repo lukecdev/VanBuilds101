@@ -5,7 +5,7 @@
 
 <div class="masthead">
     <ul>
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
         <div class="container">
             <div>
                 <a class="link" href="{% url 'update_post' post.slug %}">Edit Post</a>
