@@ -78,6 +78,15 @@ The design philosophy for this site is a easy to navigate and read site. As this
 ## Agile Methodology
 - The principles of agile methodology were implemented during the project. By assigning user stories to issues and utilizing the GitHub Kanban board, the necessary project goals could be easliy prioritized. Labels were used to fine tune the priority of each user story.
 
+To see Kanban please click [here](https://github.com/users/lukecdev/projects/1)
+
+Once I completed a task I would tick the appropriate box and if all parts of this story were completed I would move it from **in progress** to **completed**.
+
+At the end of a coding session I would update the user stories with a comment of:
+
+ - What was done
+ - What is left to be done
+
 ## User Stories
 
 ### Users
