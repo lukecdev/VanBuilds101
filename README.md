@@ -234,3 +234,11 @@ Creating a clone enables you to make a copy of the repository at that point in t
 
 
 # Credits
+- I used watched this [Youtube Video](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) which helped me build the basics of the blog creation for my site.
+- I used watched this [Youtube Video](https://www.youtube.com/watch?v=sSquD2u5Ie0) which helped me build elements of the photo gallery.
+
+#  Acknowledgments
+
+- A huge thanks to [Chris Quinn](https://github.com/10xOXR) for his help, suggestions and patiece while I put together this project. 
+
+- Also a huge thanks to the tutors at Code institute for your patience and help in fixing my code issues.
