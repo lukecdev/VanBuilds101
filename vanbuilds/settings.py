@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['vanbuilds-758ccba3a303.herokuapp.com', '8000-lukecdev-vanbuilds101-l2q122o3uw7.ws-eu105.gitpod.io',  'vanbuilds.herokuapp.com', 'localhosts']
 
