@@ -9,21 +9,24 @@
 
 ## [Repository](https://github.com/lukecdev/VanBuilds101)
 
+### Intro
+
+- Van Builds 101 is a blog focused on diy campervans. Offering advice and insit into building your own campervan and what is the best materials to use. There is also a section to show photos of campervans to help other users get inspiration for their own builds. 
+
 ## Table of contents
 
- 1. [ UX ](#ux) 
+ 1. Project Planning 
+ 2. UX
+ 3. CRUD
+ 4. Testing
+ 5. Bugs
+ 6. Deployment
+ 7. Credits
+ 8. Acknowledgments
 
-# UX
-<a name="ux"></a>
+# Project Planning
 
-The design philosophy for this site is a easy to navigate and read site. As this site will be hosting articles that provides information, I want to make getting to the particular blog and reading it a minimal effort.
-
-### Site Goal
-The goal of the site is to create a platform for online communication. To create an engaging experience to provide a userful edication for the Vanlife community. 
-
-## Project Planning
-
-### Database 
+## Database 
 
 #### Post Model
 
@@ -62,6 +65,9 @@ The goal of the site is to create a platform for online communication. To create
 | approved |BooleanField|
 
 # UX Design
+
+### Site Goal
+The goal of the site is to create a platform for online communication. To create an engaging experience to provide a userful edication for the Vanlife community. 
 
 ## WireFrame
 ![Wireframe](README_docs/wireframes/van-blog-sc-2.png)
@@ -122,6 +128,9 @@ Desktop View while user is logged out/unregistered:
 
 ## Future Features
 
+- Map API: This would be a feature for log-in users, where there is a map section that shows locations of campsites, supply stores, view points and simialr locations that would be useful for campervan owners.
+- Gallery Image cards: This is in the gallery page. When a user clicks on a gallery image card, it would expand to show more images grouped with the first card. This would allow users to have more detailed photos of their van in the one card. Improving the UX of the page.
+
 # C.R.U.D
 
 ## Posting
@@ -166,6 +175,61 @@ Desktop View while user is logged out/unregistered:
 - django-allauth
 - django-crispy-forms
 - pillow
+
+
+# Testing
+
+## Manual Testing
+> Each user story was manually tested in line with intended functionality on both desktop & mobile.
+> As this project was driven by my own User Stories I  felt manual testing was applicable on all logic code.
+
+>If the intended outcome completes then this will be flagged as pass. If it does not then this is a fail.
+
+#### Account Registration Tests
+| Test |Result  |
+|--|--|
+| User can create account | Pass |
+| User can log into account| Pass|
+|User can log out of account|Pass|
+
+#### User Navigation Tests
+
+| Test |Result  |
+|--|--|
+|User can navigate to blog posts |Pass|
+|User access gallery |Pass|
+|SuperUser can access admin panel |Pass|
+
+#### Account Security Tests
+
+| Test |Result  |
+|--|--|
+|Non logged in user cannot edit posts | Pass |
+|Non superuser cannot access admin panel|Pass|
+
+#### Admin Tests
+
+| Test |Result  |
+|--|--|
+|Admin can add a new Post |Pass|
+|Admin can add photos |Pass|
+|Admin can edit edit posts |Pass|
+|Admin can deleten posts |Pass|
+
+### Google Lighthouse
+![Lighthouse](README_docs/photos/sc-lighthouse.jpg)
+
+# Bugs
+
+### Html Checker
+![html](README_docs/photos/html-check.jpg)
+
+- When i ran the W3 Html validator, i got 2 error messages for stray </div> elements. I was not expecting these. 
+- Upon a review, I could see that these tags where being added by Django at the end of my Post_detail html when it loads with the base.html.
+
+### Gallery image upload not submitting 
+
+- When bulding the Post form for the image upload page. I build the view with the 'generic.createview' class, this was already being used in the Blog Post view for new blog posts. This casused an issue that when the button was pressed to submit the new gallery image. A "Required Field enter" pops up and does not allow the image to be submited. This required field message seems to be pulled from the Post Model. It would require re organsiing both models which I unfortantly ran out of time to fix. The current way to upload new gallery images is through the admin panel and the image section.
 
 # Deployment
 To deploy the project through Heroku I followed these steps:
@@ -226,57 +290,25 @@ Creating a clone enables you to make a copy of the repository at that point in t
 - type 'git clone' and paste the https link you copied from github
 - press enter and git will clone the repository to your local machine
 
-# Testing
-
-
-## Manual Testing
-> Each user story was manually tested in line with intended functionality on both desktop & mobile.
-> As this project was driven by my own User Stories I  felt manual testing was applicable on all logic code.
-
->If the intended outcome completes then this will be flagged as pass. If it does not then this is a fail.
-
-#### Account Registration Tests
-| Test |Result  |
-|--|--|
-| User can create account | Pass |
-| User can log into account| Pass|
-|User can log out of account|Pass|
-
-#### User Navigation Tests
-
-| Test |Result  |
-|--|--|
-|User can navigate to blog posts |Pass|
-|User access gallery |Pass|
-|SuperUser can access admin panel |Pass|
-
-#### Account Security Tests
-
-| Test |Result  |
-|--|--|
-|Non logged in user cannot edit posts | Pass |
-|Non superuser cannot access admin panel|Pass|
-
-#### Admin Tests
-
-| Test |Result  |
-|--|--|
-|Admin can add a new Post |Pass|
-|Admin can add photos |Pass|
-|Admin can edit edit posts |Pass|
-|Admin can deleten posts |Pass|
-
-
-### Google Lighthouse
-![Lighthouse](README_docs/photos/sc-lighthouse.jpg)
-
-
 # Credits
+
 - I used watched this [Youtube Video](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) which helped me build the basics of the blog creation for my site.
 - I used watched this [Youtube Video](https://www.youtube.com/watch?v=sSquD2u5Ie0) which helped me build elements of the photo gallery.
 
-#  Acknowledgments
+## Media
+Blog Image Credits
+- https://magazine.vanketo.co/wp-content/uploads/2022/09/Campervan-conversion-kit.jpg
+- https://d38b8me95wjkbc.cloudfront.net/uploads/blog_image/image/15425/section_6_lighting._Cap_-_Subtle_lighting_effect_in_Frosty_the_Transit_Campervan__available_for_hire_on_Camplify.jpeg
+- https://vanlifeadventure.com/wp-content/uploads/2019/08/campervan-kitchen-ideas-yamanomad.jpg
+- https://uploads-ssl.webflow.com/6105314daa8822ce4688e35e/61a33cf51782becd83d7dcfe_Fixed%20platform%20bed%20setup.jpg
+- https://www.thevanconversionguide.com/wp-content/uploads/2021/12/Best-vans-for-camper-conversion.jpg
+- https://images.squarespace-cdn.com/content/v1/60a7cdfd239cca53f325e024/c89cd935-3173-492e-b8bf-1221f9f868ad/vanspace+3D+camper+van+layout+with+bench+seats.png
+- https://images.squarespace-cdn.com/content/v1/63b596be45c8ea33e4ce3f89/2473bd09-c103-4104-9f4e-997ec4669995/customcamperconversion.png
+- https://images.squarespace-cdn.com/content/v1/639b5993ca2f2b0b78cc9374/1682749464740-2E5XUIP9N01RU2F764TS/Rolling+Bothy+campervan+conversion+DeWalt+cordless+power+tools.jpg
+
+# Acknowledgments
 
 - A huge thanks to [Chris Quinn](https://github.com/10xOXR) for his help, suggestions and patiece while I put together this project. 
 
 - Also a huge thanks to the tutors at Code institute for your patience and help in fixing my code issues.
+
