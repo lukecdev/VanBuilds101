@@ -16,9 +16,9 @@
                                 <!-- The featured image/ Placeholder post images -->
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="img-fluid"
-                                    src="https://res.cloudinary.com/dk8mh15az/image/upload/v1698004547/media/ikvamdwgkjtnbpjlith2.jpg">
+                                    src="https://res.cloudinary.com/dk8mh15az/image/upload/v1698004547/media/ikvamdwgkjtnbpjlith2.jpg" alt="image">
                                 {% else %}
-                                <img class="img-fluid" src=" {{ post.featured_image.url }}">
+                                <img class="img-fluid" src=" {{ post.featured_image.url }}" alt="image">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author text-muted">Author: {{ post.author }}</p>

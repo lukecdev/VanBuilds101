@@ -230,7 +230,45 @@ Creating a clone enables you to make a copy of the repository at that point in t
 
 
 ## Manual Testing
+> Each user story was manually tested in line with intended functionality on both desktop & mobile.
+> As this project was driven by my own User Stories I  felt manual testing was applicable on all logic code.
 
+>If the intended outcome completes then this will be flagged as pass. If it does not then this is a fail.
+
+#### Account Registration Tests
+| Test |Result  |
+|--|--|
+| User can create account | Pass |
+| User can log into account| Pass|
+|User can log out of account|Pass|
+
+#### User Navigation Tests
+
+| Test |Result  |
+|--|--|
+|User can navigate to blog posts |Pass|
+|User access gallery |Pass|
+|SuperUser can access admin panel |Pass|
+
+#### Account Security Tests
+
+| Test |Result  |
+|--|--|
+|Non logged in user cannot edit posts | Pass |
+|Non superuser cannot access admin panel|Pass|
+
+#### Admin Tests
+
+| Test |Result  |
+|--|--|
+|Admin can add a new Post |Pass|
+|Admin can add photos |Pass|
+|Admin can edit edit posts |Pass|
+|Admin can deleten posts |Pass|
+
+
+### Google Lighthouse
+![Lighthouse](README_docs/photos/sc-lighthouse.jpg)
 
 
 # Credits
