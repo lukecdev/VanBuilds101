@@ -125,18 +125,22 @@ Desktop View while user is logged out/unregistered:
 
 ## Create
 - Create Blog Post View
+
 ![Create](README_docs/photos/sc-create-post.jpg)
 
 ## Read
 - Read Post detail
+
 ![Read](README_docs/photos/sc-read-post.jpg)
 
 ## Update
 - Update Blog Post
+
 ![Update](README_docs/photos/sc-update-post.jpg)
 
 ## Delete
 - Delete Blog Post
+
 ![Delete](README_docs/photos/sc-delete-post.jpg)
 
 # Technologies Used
