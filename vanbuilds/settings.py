@@ -30,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['vanbuilds-758ccba3a303.herokuapp.com', '8000-lukecdev-vanbuilds101-l2q122o3uw7.ws-eu105.gitpod.io',  'vanbuilds.herokuapp.com', 'localhosts']
+ALLOWED_HOSTS = ['vanbuilds-758ccba3a303.herokuapp.com','8000-lukecdev-vanbuilds101-e6v459t77o4.ws-eu107.gitpod.io', '8000-lukecdev-vanbuilds101-l2q122o3uw7.ws-eu105.gitpod.io',  'vanbuilds.herokuapp.com', 'localhosts']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
