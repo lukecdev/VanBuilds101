@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row mx-auto col-lg-6">
+      <h3 class="mb-3">Hi {{ user.username }}!</h3>
+      <hr />
+      <h6>Welcome to your profile page.</h6>
+      <h6>You can update your details using the form below if you require.</h6>
+    
+      <div>
+        <h5 class="mt-3">About:</h5>
+        <p>{{ profile.about_user }}</p>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
