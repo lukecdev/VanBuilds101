@@ -6,6 +6,7 @@
 <div class="container-fluid mt-3">
     <div class="row mx-auto col-lg-6">
       <h3 class="mb-3">Hi {{ user.username }}!</h3>
+      <h3 class="mb-3">Hi {{ user.username }}!</h3>
       <hr />
       <h6>Welcome to your profile page.</h6>
       <h6>You can update your details using the form below if you require.</h6>
@@ -15,6 +16,11 @@
         <p>{{ profile.about_user }}</p>
       </div>
     </div>
+</div>
+
+<div class="row mx-auto col-lg-6">
+<a href="{% url 'profile' %}" class="btn btn-primary">Edit Profile</a>
+
 </div>
 
 {% endblock %}

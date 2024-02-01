@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Profile
-from .forms import CommentForm 
+from .forms import CommentForm, EditProfile
 from django.urls import reverse_lazy
 
 
@@ -102,23 +102,8 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-#class ProfileView(View):
-   # model = Profile
-   # template_name = "profile.html"
-
 def profile(request):
     """
-    Render the profile.html template
+    Render the landing_page.html template
     """
     return render(request, "profile.html")
-
-#def profile(request):
- #   if request.method == 'POST':
-  #      profile = Profile.objects.get(user=request.user)
-#
- #       return redirect('profile')
-#
- #   context = {
-  #      'profile': profile,
-   # }
-    #return render(request, 'profile.html', context)

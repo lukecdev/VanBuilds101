@@ -6,6 +6,7 @@ from .views import DeletePostView
 
 
 
+
 urlpatterns = [
     path("", views.landing_page, name="landing_page"),
     path('posts/', views.PostList.as_view(), name="posts"),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('profile/', views.profile, name ='profile'),
+    
 ]
