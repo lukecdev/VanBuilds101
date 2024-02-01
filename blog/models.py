@@ -21,7 +21,7 @@ class Post(models.Model):
         ordering = ['-created_on']
 
     def get_absolute_url(self):
-        return reverse('home')    
+        return reverse('posts')    
 
     def __str__(self):
         return self.title  

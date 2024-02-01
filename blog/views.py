@@ -5,6 +5,14 @@ from .models import Post, Profile
 from .forms import CommentForm 
 from django.urls import reverse_lazy
 
+
+def landing_page(request):
+    """
+    Render the landing_page.html template
+    """
+    return render(request, "landing_page.html")
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -27,7 +35,7 @@ class UpdatePostView(generic.UpdateView):
 class DeletePostView(generic.DeleteView):
     model = Post
     template_name = "delete_post.html"
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('posts')
     fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']    
 
 class PostDetail(View):
@@ -95,16 +103,22 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 #class ProfileView(View):
-    #model = Profile
+   # model = Profile
    # template_name = "profile.html"
 
 def profile(request):
-    if request.method == 'POST':
-        profile = Profile.objects.get(user=request.user)
+    """
+    Render the profile.html template
+    """
+    return render(request, "profile.html")
 
-        return redirect('profile')
-
-    context = {
-        'profile': profile,
-    }
-    return render(request, 'profile.html', context)
+#def profile(request):
+ #   if request.method == 'POST':
+  #      profile = Profile.objects.get(user=request.user)
+#
+ #       return redirect('profile')
+#
+ #   context = {
+  #      'profile': profile,
+   # }
+    #return render(request, 'profile.html', context)
