@@ -1,5 +1,16 @@
 body {
-    background-color: bisque;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.5454147723542542) 100%);
+}
+
+.bg-1 {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.5454147723542542) 100%);
+}
+
+.custom-container {
+        padding-top: 70px;
+        padding-bottom: 70px;
 }
 
 .brand {
