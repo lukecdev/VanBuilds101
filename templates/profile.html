@@ -23,4 +23,28 @@
 
 </div>
 
+<div class="row mx-auto col-lg-6">
+  <form
+    class="signup"
+    id="signup_form"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <!-- edit user -->
+    {{ edit_user|crispy }}
+    <!-- edit profile -->
+    {{ edit_profile|crispy }} {% if redirect_field_value %}
+    <input
+      type="hidden"
+      name="{{ redirect_field_name }}"
+      value="{{ redirect_field_value }}"
+    />
+    {% endif %}
+    <button class="btn my-3 fw-bold auth-btn right" type="submit">
+      Update
+    </button>
+  </form>
+</div>
+
 {% endblock %}
