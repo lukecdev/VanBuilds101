@@ -17,5 +17,9 @@ def van_images(request):
 class NewPhoto(generic.CreateView):
     model = Image
     template_name = "new_photo.html"
-    fields = ['title', 'slug', 'excerpt', 'image']
+    fields = ['title', 'slug', 'excerpt', 'gallery_image']
+
+    def form_valid(self, form):
+        form.instance.author_id = self.request.user.id
+        return super().form_valid(form)
 
