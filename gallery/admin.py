@@ -3,7 +3,7 @@ from .models import Image
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ['title', 'image', 'approved']
+    list_display = ['title', 'approved']
     search_fields = ['title', 'author']
     list_filter = ('approved',)
     actions = ['approve_images']

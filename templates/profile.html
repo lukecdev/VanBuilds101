@@ -5,14 +5,26 @@
 {% block content %}
 <div class="container-fluid mt-3">
     <div class="row mx-auto col-lg-6">
-      <h3 class="mb-3">Hi {{ user.username }}!</h3>
+      <div class="profile-image-container">
+        {% if "default" in user.profile.profile_image.url %}
+        <!-- Default Image -->
+            <img class="rounded-circle account-img" src="https://res.cloudinary.com/dk8mh15az/image/upload/v1707236253/gvccnpixtsclu9ulp6o5.png" alt="profile picture">
+        {% else %}
+        <!--Uploaded Profile Image-->
+        <img class="rounded-circle account-img" src="{{ user.profile.profile_image.url }}" alt="profile picture">
+        {% endif %}
+      </div>
       <h3 class="mb-3">Hi {{ user.username }}!</h3>
       <hr />
-      <h6>Welcome to your profile page.</h6>
-      <h6>You can update your details using the form below if you require.</h6>
+      <h2 class="account-heading">{{ user.name }} {{ user.last_name }}</h2>
+        <h3>Profile Info</h3>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Name:</strong> {{ profile.name }}</p>
+        <p><strong>Created:</strong> {{ profile.created }}</p>
     
       <div>
-        <h5 class="mt-3">About:</h5>
+        <h4 class="mt-3">About:</h4>
         <p>{{ profile.about_user }}</p>
       </div>
     </div>
@@ -31,8 +43,7 @@
     enctype="multipart/form-data"
   >
     {% csrf_token %}
-    <!-- edit user -->
-    {{ edit_user|crispy }}
+    {{ edit_user |crispy}}
     <!-- edit profile -->
     {{ edit_profile|crispy }} {% if redirect_field_value %}
     <input
@@ -41,9 +52,9 @@
       value="{{ redirect_field_value }}"
     />
     {% endif %}
-    <button class="btn my-3 fw-bold auth-btn right" type="submit">
-      Update
-    </button>
+    <div class="form-group" id="update-form-button-container">
+    <button class="btn my-3" type="submit">Update</button>
+    </div>
   </form>
 </div>
 

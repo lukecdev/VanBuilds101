@@ -17,5 +17,5 @@ def van_images(request):
 class NewPhoto(generic.CreateView):
     model = Image
     template_name = "new_photo.html"
-    fields = ['title', 'slug', 'excerpt', 'image', 'author', 'approved']
+    fields = ['title', 'slug', 'excerpt', 'image']
 

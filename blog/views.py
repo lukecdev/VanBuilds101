@@ -5,6 +5,7 @@ from .models import Post, Profile
 from .forms import CommentForm, EditUserForm, EditProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 def landing_page(request):
@@ -108,7 +109,7 @@ class PostLike(View):
   #  Render the landing_page.html template
    # """
     #return render(request, "profile.html")
-
+@login_required
 def profile(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user=request.user)
@@ -132,4 +133,3 @@ def profile(request):
         'edit_profile': edit_profile
     }
     return render(request, 'profile.html', context)
-
