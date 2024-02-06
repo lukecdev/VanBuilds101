@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -10,16 +11,16 @@
         <div class="overlay-header"></div>
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col-7 col-md-6 my-auto">
+                <div class="col-7 col-md-12 my-auto text-center">
                     
                     <h1 class="display-4 logo-font text-white">
                         Welcome to Van Builds 101
                     </h1>
                     <div class="my-5">
-                        <h4>
+                        <button class="landing-btn">
                             <a href="{% url 'posts' %}"
                                 class=" btn btn-lg rounded-5 text-uppercase py-3">Explore</a>
-                        </h4>
+                        </button>
                     </div>
                 </div>
             </div>
