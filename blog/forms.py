@@ -28,4 +28,4 @@ class EditUserForm(forms.ModelForm):
 class EditProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = '__all__'
+        fields = ['email', 'name', 'profile_image', 'about_user']

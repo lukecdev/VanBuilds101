@@ -43,7 +43,7 @@
     enctype="multipart/form-data"
   >
     {% csrf_token %}
-    {{ edit_user |crispy}}
+    
     <!-- edit profile -->
     {{ edit_profile|crispy }} {% if redirect_field_value %}
     <input
