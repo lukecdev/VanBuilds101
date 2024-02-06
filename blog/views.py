@@ -25,7 +25,7 @@ class PostList(generic.ListView):
 class PostCreateView(generic.CreateView):
     model = Post
     template_name = "new_post.html"
-    fields = ['title','slug', 'author', 'featured_image', 'excerpt', 'content', 'status']
+    fields = ['title','slug', 'featured_image', 'excerpt', 'content', 'status']
     
 
 
