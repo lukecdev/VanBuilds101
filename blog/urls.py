@@ -14,8 +14,7 @@ urlpatterns = [
     path('create_post/',login_required (PostCreateView.as_view()), name='create_post'),
     path('update_post/<slug:slug>', login_required (UpdatePostView.as_view()), name='update_post'),
     path('delete_post/<slug:slug>/delete', login_required (DeletePostView.as_view()), name='delete_post'),
-    path('/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('post/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
-    path('profile/', views.profile, name ='profile'),
     
 ]

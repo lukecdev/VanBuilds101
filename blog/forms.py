@@ -11,11 +11,6 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-#class EditProfile(forms.ModelForm):
- #   class Meta:
-  #      model = Profile
-   #     fields = ['name', 'about_user']
-
 
 class EditUserForm(forms.ModelForm):
     email = forms.EmailField()

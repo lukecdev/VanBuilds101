@@ -44,6 +44,18 @@
                             <p>{{ image.excerpt }}</p>
                         </div>
                     </div>
+                    <div>
+                        {% if user.is_superuser %}
+                            <div>
+                                <small>
+                                    <a class="link" href="{% url 'update_gallery' image.slug %}">(Edit Post)</a>
+        
+                                    <a class="link" href="{% url 'delete_gallery' image.slug %}">(Delete Post) </a>
+                                </small>
+                            </div>
+                            {% endif %}
+                            <hr>  
+                    </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>

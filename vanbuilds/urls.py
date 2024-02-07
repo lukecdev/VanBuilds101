@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from blog import views as blog_views
 
 
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('', include('blog.urls'), name='blogs_urls'),
     path('accounts/', include('allauth.urls')),
     path('gallery/', include('gallery.urls'), name='gallery_urls'),
+    path("profile/", blog_views.profile, name="profile")
 ]
 
 
