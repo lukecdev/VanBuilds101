@@ -137,6 +137,9 @@ Desktop View while user is logged out/unregistered:
 ### Gallery
 ![Gallery](README_docs/photos/sc-gallery.jpg)
 
+### Profile
+![Profile](README_docs/photos/profile-sc.jpg)
+
 
 ## Future Features
 
@@ -234,7 +237,13 @@ Desktop View while user is logged out/unregistered:
 | Test |Result  |
 |--|--|
 |Non logged in user cannot edit posts | Pass |
+|Non logged in user cannot edit gallery images | Pass |
+|Non logged in user cannot access profiles | Pass |
+|Non logged in user cannot add gallery images | Pass |
 |Non superuser cannot access admin panel|Pass|
+|Non superuser cannot update gallery images|Pass|
+|Non superuser cannot delete gallery images|Pass|
+|Non superuser cannot delete posts|Pass|
 
 #### Admin Tests
 
@@ -242,11 +251,11 @@ Desktop View while user is logged out/unregistered:
 |--|--|
 |Admin can add a new Post |Pass|
 |Admin can add photos |Pass|
-|Admin can edit edit posts |Pass|
-|Admin can deleten posts |Pass|
+|Admin can edit posts |Pass|
+|Admin can delete posts |Pass|
 
 ### Google Lighthouse
-![Lighthouse](README_docs/photos/sc-lighthouse.jpg)
+![Lighthouse](README_docs/photos/sc-lighthouse-new.jpg)
 
 # Bugs
 
@@ -256,9 +265,6 @@ Desktop View while user is logged out/unregistered:
 - When i ran the W3 Html validator, i got 2 error messages for stray </div> elements. I was not expecting these. 
 - Upon a review, I could see that these tags where being added by Django at the end of my Post_detail html when it loads with the base.html.
 
-### Gallery image upload not submitting 
-
-- When bulding the Post form for the image upload page. I build the view with the 'generic.createview' class, this was already being used in the Blog Post view for new blog posts. This casused an issue that when the button was pressed to submit the new gallery image. A "Required Field enter" pops up and does not allow the image to be submited. This required field message seems to be pulled from the Post Model. It would require re organsiing both models which I unfortantly ran out of time to fix. The current way to upload new gallery images is through the admin panel and the image section.
 
 # Deployment
 To deploy the project through Heroku I followed these steps:
@@ -340,4 +346,8 @@ Blog Image Credits
 - A huge thanks to [Chris Quinn](https://github.com/10xOXR) for his help, suggestions and patiece while I put together this project. 
 
 - Also a huge thanks to the tutors at Code institute for your patience and help in fixing my code issues.
+
+- A huge thanks to Jason from Tutor support at Code Institute for their amazing support
+
+- Alan Bushell at Code Institute for the contunied support through out the course.
 
