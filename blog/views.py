@@ -6,6 +6,7 @@ from .forms import CommentForm, EditUserForm, EditProfileForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def landing_page(request):
@@ -104,32 +105,32 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-#def profile(request):
- #   """
-  #  Render the landing_page.html template
-   # """
-    #return render(request, "profile.html")
+
 @login_required
 def profile(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user=request.user)
-        #edit_user = EditUserForm(request.POST, instance=request.user)
         edit_profile = EditProfileForm(request.POST,
                                        request.FILES,
                                        instance=request.user.profile)
         if edit_profile.is_valid():
-            #edit_user.save()
             edit_profile.save()
             messages.success(request, f'Profile updated successfully')
             return redirect('profile')
     else:
         profile = Profile.objects.get(user=request.user)
-        #edit_user = EditUserForm(instance=request.user)
         edit_profile = EditProfileForm(instance=request.user.profile)
 
     context = {
         'profile': profile,
-        #'edit_user': edit_user,
         'edit_profile': edit_profile
     }
     return render(request, 'profile.html', context)
+
+@login_required
+def DeleteProfileView(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    user.delete()
+    messages.warning(request,
+                     'Your Account has been successfully closed')
+    return redirect('posts')

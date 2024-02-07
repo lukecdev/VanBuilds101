@@ -27,9 +27,6 @@ urlpatterns = [
     path('', include('blog.urls'), name='blogs_urls'),
     path('accounts/', include('allauth.urls')),
     path('gallery/', include('gallery.urls'), name='gallery_urls'),
-    path("profile/", blog_views.profile, name="profile")
+    path("profile/", blog_views.profile, name="profile"),
+    path("profile_delete/<user_id>/",blog_views.DeleteProfileView, name="profile_delete"),
 ]
-
-
-#if settings.DEBUG:
- #   urlpatterns += static(settings.MEDIA_URL, document_root=setting.MEDIA_ROOT)
