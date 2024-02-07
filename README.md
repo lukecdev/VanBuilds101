@@ -60,7 +60,7 @@
 | title |CharField|
 | slug |SlugField|
 | excerpt |TextField|
-| image |ImageField|
+| gallery_image |CloudinaryField|
 | author |ForeignKey|
 | approved |BooleanField|
 
@@ -119,6 +119,9 @@ Desktop View while user is logged out/unregistered:
 ### Homepage
 ![Homepage](README_docs/photos/SC-PP4-home.jpg)
 
+### Landing Page
+![Landing](README_docs/photos/landing-page-sc.jpg)
+
 ### Register
 ![SignUp](README_docs/photos/sc-signup.jpg)
 
@@ -149,20 +152,37 @@ Desktop View while user is logged out/unregistered:
 
 ![Create](README_docs/photos/sc-create-post.jpg)
 
+- Create Gallery Image
+
+![CreateGallery](README_docs/photos/new-add-gallery.jpg)
+
 ## Read
 - Read Post detail
 
 ![Read](README_docs/photos/sc-read-post.jpg)
+
+- Read Gallery Section
+
+![ReadGallery](README_docs/photos/read-gallery.jpg)
 
 ## Update
 - Update Blog Post
 
 ![Update](README_docs/photos/sc-update-post.jpg)
 
+- Update Gallery Image
+
+![UpdateGallery](README_docs/photos/update-gallery.jpg)
+
 ## Delete
 - Delete Blog Post
 
 ![Delete](README_docs/photos/sc-delete-post.jpg)
+
+- Delete Gallery Image
+
+![DeleteGallery](README_docs/photos/delete-gallery.jpg)
+
 
 # Technologies Used
 1. Python - Used for the logic in this project
